@@ -17,6 +17,8 @@ public class MainActivity extends Activity {
 		Log.d("MainActivity", "testing");
 		//sendUrlToServer("http://www.google.com");
 		
+		TargetDatabase.instance().init(getPreferences(0));
+		
 	}
 
 	@Override
