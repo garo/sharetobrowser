@@ -1,0 +1,6 @@
+
+create table sharetobrowser_shares (
+	id int auto_increment primary key,
+	url text,
+	ts timestamp not null
+);
