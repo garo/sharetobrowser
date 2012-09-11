@@ -26,10 +26,12 @@ public class SendUrlToServerTask extends AsyncTask<String, Void, String> {
 
 	@Override
 	protected String doInBackground(String... params) {
-		Log.d("SendUrlToServerTask", "Sending url:" + params[0]);
+		String urlString = (String) params[0];
+		String target = (String) params[1];
+		Log.d("SendUrlToServerTask", "Sending url:" + urlString + " to " + target);
 
 		try {
-			String query = "http://juhonkoti.net/sharetobrowser/send.php?url=" + URLEncoder.encode((String)params[0], "UTF-8");
+			String query = "http://juhonkoti.net/sharetobrowser/send.php?url=" + URLEncoder.encode(urlString, "UTF-8") + "&target=" + URLEncoder.encode(target, "UTF-8");
 			Log.d("SendUrlToServerTask", "query: " + query);
 			URL url = new URL(query);
 			URLConnection uc = url.openConnection();

@@ -26,10 +26,27 @@ public class ScanQRCodeActivity extends Activity {
 			// handle scan result
 			Log.d("ScanQRCodeActivity", "Got results:" + scanResult.getContents());
 			
+			String text = scanResult.getContents();
 			TextView t = (TextView) findViewById(R.id.sendToServerText);
-			t.setText(scanResult.getContents());
+
+			if (text.startsWith("sh2b://")) {
+				// This is a special uri to register a target
+				
+				TargetDatabase.instance().addTarget(text);
+				t.setText("Added new target " + text);
+				
+				Log.i("ScanQRCodeActivity", "Added new target " + text);
+				
+				Intent newIntent = new Intent(this, MainActivity.class);   
+				startActivity(newIntent); 
+				
+			} else {
+				t.setText(scanResult.getContents());
+				
+				new SendUrlToServerTask(this).execute(scanResult.getContents(), TargetDatabase.instance().getDefaultTarget());
+				
+			}
 			
-			new SendUrlToServerTask(this).execute(scanResult.getContents());
 		}
 		// else continue with any other code you need in the method
 
