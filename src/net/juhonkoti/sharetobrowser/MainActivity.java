@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void scanQRCode(View view) {
-		Intent intent = new Intent(this, ScanQRCodeActivity.class);   
+		Intent intent = new Intent(this, ScanQRCodeActivity.class);		
 		startActivity(intent); 
 
 	}

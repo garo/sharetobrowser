@@ -43,7 +43,12 @@ public class ScanQRCodeActivity extends Activity {
 			} else {
 				t.setText(scanResult.getContents());
 				
-				new SendUrlToServerTask(this).execute(scanResult.getContents(), TargetDatabase.instance().getDefaultTarget());
+				Intent newIntent = new Intent(this, PrepareToShareActivity.class);
+				newIntent.setType("text/plain");
+				newIntent.putExtra(Intent.EXTRA_TEXT, scanResult.getContents());
+				startActivity(newIntent); 
+								
+				//new SendUrlToServerTask(this).execute(scanResult.getContents(), TargetDatabase.instance().getDefaultTarget());
 				
 			}
 			

@@ -4,7 +4,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="15" />
 
     <application
@@ -17,7 +17,6 @@
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,10 +33,15 @@
         <activity
             android:name=".ShareToBrowser"
             android:label="@string/title_activity_share_to_browser" >
+
+        </activity>
+        <activity
+            android:name=".PrepareToShareActivity"
+            android:label="@string/title_activity_prepare_to_share" >
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
-            	<data android:mimeType="text/plain" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
     </application>

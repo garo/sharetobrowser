@@ -23,11 +23,12 @@ public class ShareToBrowser extends Activity {
     		TextView t = (TextView) findViewById(R.id.sendToServerText);
     		t.setText(url);
     		
-    		new SendUrlToServerTask(this).execute(url, TargetDatabase.instance().getDefaultTarget());        	
+    		//new SendUrlToServerTask(this).execute(url, TargetDatabase.instance().getDefaultTarget());
+    		
+    		Intent newIntent = new Intent(this, PrepareToShareActivity.class);
+    		//newIntent.setData(new Uri(url));
+    		startActivity(newIntent); 
         }
-
-
-        
       
     }
 }

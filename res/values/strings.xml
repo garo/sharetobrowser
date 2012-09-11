@@ -9,5 +9,8 @@
     <string name="title_activity_scan_qrcode">ScanQRCode</string>
     <string name="start_page_help">How to use</string>
     <string name="title_activity_share_to_browser">ShareToBrowser</string>
-
+    <string name="title_activity_prepare_to_share">PrepareToShare</string>
+    <string name="target_spinner_prompt">Choose target where you want to share</string>
+    
+    
 </resources>
