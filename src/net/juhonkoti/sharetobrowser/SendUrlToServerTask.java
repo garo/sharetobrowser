@@ -21,7 +21,8 @@ public class SendUrlToServerTask extends AsyncTask<String, Void, String> {
 	protected void onPostExecute(String result) {
 		Log.d("SendUrlToServerTask", "url done. result: " + result);
 		Intent intent = new Intent(context, SendDoneActivity.class);   
-		context.startActivity(intent); 
+		context.startActivity(intent);
+		
 	}
 
 	@Override

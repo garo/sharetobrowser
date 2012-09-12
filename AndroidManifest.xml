@@ -28,7 +28,8 @@
         <activity
             android:name=".ScanQRCodeActivity"
             android:exported="false"
-            android:label="@string/title_activity_scan_qrcode" >
+            android:label="@string/title_activity_scan_qrcode"
+            >
         </activity>
         <activity
             android:name=".ShareToBrowser"
@@ -37,7 +38,8 @@
         </activity>
         <activity
             android:name=".PrepareToShareActivity"
-            android:label="@string/title_activity_prepare_to_share" >
+            android:label="@string/title_activity_prepare_to_share"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />

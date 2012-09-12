@@ -46,7 +46,8 @@ public class ScanQRCodeActivity extends Activity {
 				Intent newIntent = new Intent(this, PrepareToShareActivity.class);
 				newIntent.setType("text/plain");
 				newIntent.putExtra(Intent.EXTRA_TEXT, scanResult.getContents());
-				startActivity(newIntent); 
+				startActivity(newIntent);
+				finish();
 								
 				//new SendUrlToServerTask(this).execute(scanResult.getContents(), TargetDatabase.instance().getDefaultTarget());
 				

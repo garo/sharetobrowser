@@ -1,7 +1,8 @@
 package net.juhonkoti.sharetobrowser;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 
 public class SendDoneActivity extends Activity {
@@ -18,7 +19,17 @@ public class SendDoneActivity extends Activity {
         return true;
     }
     
+    
+    @Override
     public void onBackPressed() {
-    	
+    	Log.d("SendDoneActivity", "onBackPressed");
+    	finish();
+    }
+    
+    @Override
+    public void onPause() {
+    	super.onPause();
+    	Log.d("SendDoneActivity", "onPause");
+    	finish();
     }
 }
